@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title> Tipos Var Let e Const </title>
+</head>
+<body>
+    <script>
+        var disciplina = "Fundamentos de Programação"; // global - pode ser chamada a qualquer momento
+
+        function modificaDisciplina(){
+            disciplina = "Lógica de Programação";
+        }
+        modificaDisciplina(); // chama a função
+        if(true){
+            disciplina = "Programação Web!";
+        }
+        var i = 0;
+        while(i < 5){
+            disciplina = "Sistemas Operacionais!";
+            i++;
+        }
+
+        { //bloco de código
+            disciplina = "Gestão de Tempo!";
+        }
+
+        console.log(disciplina);
+
+        console.log("----Escopo de Função do Tipo VAR----");
+
+        media(7,8);
+
+        function media(n1,n2){
+            var med = (n1+n2)/2; //escopo de função - pois ela foi declarada dentro da função
+            console.log(med);
+        }
+
+        // media(7,8);//Tanto faz em cima como embaixo
+        // console.log(med); // fora da função que a variavél foi declara o acesso não é permitido
+
+        var escola = "Lucas Emmanuel";
+        console.log(escola);
+        var escola = "Amélia Figueiredo!!!";
+        console.log(escola);
+
+        //O tipo var só permite função de global e function
+
+        console.log("------------------------------------");
+        
+        console.log("---------Escopo do tipo LET---------");
+        
+        let professor = "João Victor";
+        function modProd(){
+            professor = "Rivânio";
+        }
+        modProd();
+        console.log(professor);
+
+        if(true){
+            professor = "Francisco Dias";
+        }
+        console.log(professor);
+
+        function quadrado(valor){
+            let quad = valor * valor;
+            console.log(quad); // Acesso permitido!!
+        }
+        quadrado(5);
+        // console.log(quad); // Fora da função que a variavél foi declara o acesso não é permitido
+
+    { // Escopo de bloco
+        let curso= "Administração";
+        console.log(curso);// acesso permitido somente dentro da função que a variavél foi declarada
+    }
+    // console.log(curso);// acesso negado
+
+    if(true){
+        let salario = 1950; 
+        console.log(salario); // acesso permitido somente dentro da função que a variavél foi declarada
+    }
+    // console.log(salario); // acesso negado
+
+    //O tipo let permite função de global, function e bloco
+
+    let numero = 125;
+        numero = 130;
+
+    console.log(numero);
+
+    </script>
+</body>
+</html>
